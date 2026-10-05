@@ -64,11 +64,10 @@ Money is calculated in cents.
 | `api_client.py` | HTTP only. Calls health, list, get, and create, and raises `ApiError` on an error response. |
 | `quote.py` | Pricing rules. `collect_lines` accepts any fetch function. `build_quote` and `quote_code` work on plain dictionaries. |
 | `main.py` | Command-line program. Fetches tools, then calls the functions in `quote.py`. |
-| `test_quote.py` | Equivalence-class tests for `build_quote`. They use plain dictionaries and do not call the API. |
-| `test_cmd_quote.py` | Tests for `cmd_quote`. They use the real `ToolsClient` and the live API. |
-| `test_cmd_quote_isolated.py` | The same tests for `cmd_quote`, run against a hand-written fake client with no network. |
-| `test_cmd_quote_mocked.py` | The same tests again, with `requests.request` replaced by a `Mock` that is verified for how it was called. |
-| `requirements.txt` | `requests` for the API client, and `pytest` for the tests. |
+| `requirements.txt` | `requests` and `python-dotenv` for the client, and `pytest` for the tests. |
+| `.env.example` | Template for `.env`. Shows the variable name without naming a real server. |
+| `.env` | Your server address. Gitignored, so it is never committed. |
+| `.gitignore` | Keeps `.env`, `.venv/`, `__pycache__/`, and `.pytest_cache/` out of the repository. |
 
 ## Tests
 This section is your task to complete.
